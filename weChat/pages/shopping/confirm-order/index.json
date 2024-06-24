@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#3d61fb",
+  "navigationBarTitleText": "食堂点餐",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "service-agreement": "../../../components/service-agreement/index"
+  }
+}

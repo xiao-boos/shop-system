@@ -1,0 +1,23 @@
+<van-popup
+  show="{{ popupShow }}"
+  position="bottom"
+  custom-style="height: 90vh;"
+  round
+  closeable
+  bind:close="closePopup"
+>
+  <view class="container">
+    <text class="text-xl-2 text-black-2">服务条款同意书</text>
+    <scroll-view
+      class="container-content"
+      style="max-height: 70vh"
+      scroll-y
+    >
+      <rich-text style="font-size: 30rpx;" nodes="{{privacyText}}"></rich-text>
+    </scroll-view>
+    <view class="container-footer">
+      <van-button catch:tap="triggerAgreement" data-field="false" round custom-class="gray-btn">不同意</van-button>
+      <van-button catch:tap="triggerAgreement" data-field="true" round custom-class="primary-btn">同意</van-button>
+    </view>
+  </view>
+</van-popup>

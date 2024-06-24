@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/home/index",
     "pages/index/order/index/index",
-    "pages/index/mine/index"
+    "pages/index/mine/index",
+    "pages/shopping/shopping-cart/index",
+    "pages/shopping/confirm-order/index"
   ],
   "tabBar": {
     "custom": true,

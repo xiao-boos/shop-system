@@ -1,0 +1,136 @@
+@use 'app';
+
+/* vant 相关 */
+.custom-label {
+  font-size: 32rpx !important;
+  color: app.$text-color-gray !important;
+}
+
+page {
+  @include app.flex(column, flex-start, center, 20rpx);
+  box-sizing: border-box;
+  background-color: app.$bg-color-gray;
+}
+
+.container {
+  @include app.flex(column, flex-start, center, 20rpx);
+  width: 95vw;
+  min-height: 100vh;
+  padding-top: 25rpx;
+  box-sizing: border-box;
+
+  .input-card {
+    width: 100%;
+    padding: 5rpx;
+    box-sizing: border-box;
+    border-radius: 15rpx !important;
+    background-color: app.$bg-color-white;
+  }
+
+  .container-info {
+    @include app.flex(column, space-evenly, flex-start, 30rpx);
+    width: 100%;
+    height: 300rpx;
+
+    .img {
+      width: 26rpx;
+      height: 26rpx;
+    }
+
+    .container-info__item {
+      @include app.flex(column, flex-start, flex-start, 20rpx);
+      width: 100%;
+
+      .content {
+        @include app.flex(row, flex-start, center, 20rpx);
+        width: 100%;
+        height: 45rpx;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .flex-content {
+        @include app.flex(row, flex-start, center, 20rpx);
+        height: 100%;
+      }
+    }
+  }
+}
+
+.cart-list {
+  @include app.flex(column, flex-start, flex-start, 25rpx);
+  width: 100%;
+
+  .cart-list__item {
+    @include app.flex(row, space-between, center);
+    width: 100%;
+    height: 80rpx;
+
+    .info {
+      @include app.flex(row, flex-start, center, 20rpx);
+      height: 100%;
+    }
+
+    .text {
+      @include app.flex(column, flex-start, flex-start, 5rpx);
+    }
+
+    .img {
+      width: 120rpx;
+      height: 80rpx;
+    }
+  }
+
+  .total {
+    margin-left: auto;
+  }
+}
+
+.payment {
+  @include app.flex(column, flex-start, flex-start, 20rpx);
+  width: 100%;
+
+  .payment-list {
+    @include app.flex(column, flex-start, flex-start, 20rpx);
+    width: 100%;
+  }
+
+  .payment-method {
+    @include app.flex(row, space-between, center, 20rpx);
+
+    .payment-method__item {
+      @include app.flex(row, flex-start, center, 20rpx);
+      height: 100%;
+
+      .img {
+        width: 45rpx;
+        height: 45rpx;
+      }
+    }
+  }
+}
+
+.tips {
+  @include app.flex(row, flex-start, center, 10rpx);
+  width: 100%;
+  margin: 35rpx 0;
+
+  .img {
+    width: 36rpx;
+    height: 36rpx;
+  }
+}
+
+.payment-btn {
+  @include app.btn;
+}
+
+.card {
+  width: 100%;
+  padding: 25rpx;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  background-color: app.$bg-color-white;
+}

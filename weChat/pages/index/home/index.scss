@@ -117,10 +117,14 @@
     .card {
       width: 90%;
       @include app.flex(row, flex-start, center, 25rpx);
-
+      .image{
+        width: 200rpx;
+        height: 200rpx;
+      }
       .left {
         width: 310rpx;
         height: 270rpx;
+        
       }
 
       .right {
@@ -128,13 +132,13 @@
         @include app.flex(column, flex-start, flex-start, 10rpx);
 
         .right-top {
-          width: 310rpx;
-          height: 130rpx;
+          width: 100rpx;
+          height: 100rpx;
         }
 
         .right-bottom {
-          width: 310rpx;
-          height: 130rpx;
+          width: 100rpx;
+          height: 100rpx;
         }
       }
     }

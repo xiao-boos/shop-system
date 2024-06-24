@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "countdown": "../../../components/countdown/index",
+    "stop-business-popup": "../../../components/stop-business-popup/index"
+  }
+}

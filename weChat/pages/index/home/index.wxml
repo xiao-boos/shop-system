@@ -30,15 +30,12 @@
   <view class="home-container__footer">
     <view class="title">
       <image src="{{getPic.titlePic}}" class="title-pic" />
-      <text class="title-text text-xl-2">到家服务</text>
+      <text class="title-text text-xl-2">请选择需要的服务</text>
     </view>
-    <view class="card">
-      <image catch:tap="toHomeService" src="{{homeServiceMenuList[0].iconUri}}" class="left" />
-      <view class="right">
-        <image catch:tap="toHomeService" src="{{homeServiceMenuList[1].iconUri}}" class="right-top" />
-        <image catch:tap="toHomeService" src="{{homeServiceMenuList[2].iconUri}}" class="right-bottom" />
-      </view>
-    </view>
+  <!--导航 start-->
+  <van-grid column-num="4">
+    <van-grid-item catch:tap="navigateToPage" wx:for="{{navData}}" icon="{{item.icon}}" text="{{item.text}}" badge="{{item.badge}}" />
+  </van-grid>
   </view>
   <view class="bottom"></view>
 </view>

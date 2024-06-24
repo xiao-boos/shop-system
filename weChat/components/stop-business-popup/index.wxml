@@ -1,0 +1,23 @@
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  safe-area-inset-bottom="{{ true }}"
+  round
+>
+  <view class="container">
+    <view class="container-title">
+      <text class="text-xl-2 text-black-2">本店暂未营业</text>
+      <text wx:if="{{ suspendDate }}" class="text-l text-green">营业时间为：{{ suspendDate }}</text>
+    </view>
+    <van-button
+      wx:if="{{ haveMultiCanteens }}"
+      bind:tap="navigateBack"
+      custom-class="custom-btn"
+      color="#3D61FB"
+      plain
+      round
+    >
+      逛逛其他商店
+    </van-button>
+  </view>
+</van-popup>

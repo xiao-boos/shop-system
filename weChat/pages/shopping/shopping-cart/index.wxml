@@ -1,0 +1,160 @@
+<view class="shop-header" id="mark">
+  <view class="header shop-header__bg">
+    <view class="header-banner bg-primary"></view>
+    <view class="header-title">
+      <van-icon catch:tap="navigateBack" color="white" size="1.5em" name="arrow-left"/>
+      <text class="text-xl-2">购物</text>
+    </view>
+  </view>
+  <view class="shop-header__card">
+    <image src="{{picUrl+'/clound-file-server/api/raw/10501/bld3.png'}}" class="img"/>
+    <view class="content">
+      <text>{{'生活百货'}}</text>
+      <view class="content-span">08:40:00-22:40:00</view>
+    </view>
+  </view>
+</view>
+
+<view class="shop-tips" id="mark">
+  <view class="shop-tips__dot"></view>
+  <text class="text-m">配送时间约15-30分钟</text>
+</view>
+
+  <!-- 购物车 -->
+<view class="cart {{popupShow ? 'ban-scroll' : ''}}">
+  <view class="cart-left" style="height: {{remainingHeight}}">
+    <scroll-view scroll-y="true" style="height: {{remainingHeight}}">
+      <view
+        wx:for="{{serviceTypes}}"
+        wx:key="index"
+        data-id="item{{index}}"
+        data-pos="{{index}}"
+        data-type="{{item.type}}"
+        catch:tap="chooseType"
+        class="cart-left__item {{selectedIndex === index ? 'selected-item' : ''}}"
+      >
+        {{item.type}}
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view
+    scroll-y="true"
+    scroll-with-animation="true"
+    scroll-into-view="{{selectedId}}"
+    bindscroll="onScroll"
+    style="height: {{remainingHeight}}"
+    scroll-top="{{scrollVal}}"
+  >
+    <view class="cart-content__list">
+      <view
+        wx:for="{{serviceTypes}}"
+        wx:key="index"
+        wx:for-item="item"
+        wx:for-index="index"
+        id="item{{index}}"
+        class="cart-content__good pro-box"
+      >
+        {{item.index}}
+        <view
+          wx:for="{{item.services}}"
+          wx:key="index"
+          class="item {{ item.inventory === 0 ? 'item-gray' : ''  }}"
+        >
+          <view class="item-img">
+            <image src="{{picUrl+item.pictureFileId}}" class="item-img"/>
+            <view wx:if="{{item.inventory === 0}}" class="{{ item.inventory === 0 ? 'item-img__gray' : ''  }}">已售完</view>
+          </view>
+          <view class="item-content">
+            <text>{{item.productName}}</text>
+            <text class="{{ item.inventory === 0 ? 'text-gray' : 'text-red'  }}">￥{{item.price}}</text>
+            <view class="item-content__bottom">
+              <text class="text-m text-gray-2">{{item.introduction}}</text>
+            </view>
+            <view class="btn" wx:if="{{item.inventory !== 0}}">
+              <image
+                wx:if="{{item.count !== 0}}"
+                data-pid="{{item.productId}}"
+                data-type="minus"
+                catch:tap="calcShoppingCart"
+                src="{{getPic.minusPic}}"
+                class="icon"
+              />
+              <text wx:if="{{item.count !== 0}}">{{item.count}}</text>
+              <image
+                data-pid="{{item.productId}}"
+                data-type="add"
+                catch:tap="calcShoppingCart"
+                src="{{getPic.plusPic}}"
+                class="icon"
+              />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+  <!-- 占位元素 -->
+<!--<view class="placeholder"></view>-->
+
+<view class="mask-screen" wx:if="{{markShow}}" catch:tap="hideMask" catch:touchmove="preventTouchMove"></view>
+
+  <!-- 底部状态栏 -->
+<view class="submit-bar" id="mark">
+  <view
+    catch:tap="showCartList"
+    class="submit-bar__icon"
+  >
+    <image src="{{getPic.cartPic}}" class="img"></image>
+    <text class="bubble">{{cartList.length}}</text>
+  </view>
+  <view class="submit-bar__info">
+    <text class="text-red text-xl-1">￥{{totalPrice}}</text>
+    <van-button catch:tap="confirmOrder" custom-class="btn">立即下单</van-button>
+  </view>
+</view>
+
+  <!-- 购物车弹窗 -->
+<view
+  catch:tap="showCartList"
+  animation="{{animationData}}"
+  class="cart-list"
+>
+  <view
+    wx:for="{{cartList}}"
+    wx:key="index"
+    class="cart-list__item">
+    <view class="header">
+      <image src="{{picUrl+item.pictureFileId}}" class="img"/>
+      <view class="title">
+        <text class="text-l">{{item.productName}}</text>
+        <text class="text-l text-red">{{item.price}}</text>
+      </view>
+    </view>
+    <view class="footer">
+      <image
+        data-pid="{{item.productId}}"
+        data-type="minus"
+        catch:tap="calcShoppingCart"
+        src="{{getPic.minusPic}}"
+        class="icon"
+      />
+      <text>{{item.count}}</text>
+      <image
+        data-pid="{{item.productId}}"
+        data-type="add"
+        catch:tap="calcShoppingCart"
+        src="{{getPic.plusPic}}"
+        class="icon"
+      />
+    </view>
+  </view>
+</view>
+
+<stop-business-popup
+  show="{{ stopPopupShow }}"
+  serveTerm="{{ serveTerm }}"
+  suspendDate="{{ suspendDate }}"
+  haveMultiCanteens="{{ haveMultiCanteens }}"
+/>

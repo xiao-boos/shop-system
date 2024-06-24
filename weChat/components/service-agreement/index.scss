@@ -1,0 +1,30 @@
+@use 'app';
+
+.container {
+  @include app.flex(column, flex-start, center);
+  width: 100vw;
+  height: 100%;
+  padding: 50rpx 40rpx 0 40rpx;
+  box-sizing: border-box;
+
+  .container-content {
+    margin-top: 40rpx;
+  }
+
+  .container-footer {
+    @include app.flex(row, space-evenly, center);
+    width: 100%;
+    height: calc(90vh - 90rpx - 75vh);
+
+    .gray-btn {
+      @include app.btn(200rpx, app.$text-color-gray, app.$bg-color-white);
+      height: 75rpx;
+      border-color: app.$text-color-gray !important;
+    }
+
+    .primary-btn {
+      @include app.btn(200rpx);
+      height: 75rpx;
+    }
+  }
+}

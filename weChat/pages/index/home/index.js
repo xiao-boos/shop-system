@@ -23,7 +23,44 @@ Page({
 		currentIndex: 0,//防止滚动区域出现空白
 		imageBaseUrl: constants.imageBaseUrl,
 		mainMenuList: [], // 主菜单
-		homeServiceMenuList: [], // 到家服务菜单
+		 //导航静态数据
+     navData: [{
+      text: "榜单",
+      icon: "http://jkw.life:8020/icon/榜单.png"
+    },
+    {
+      text: "百亿补贴",
+      icon: "http://jkw.life:8020/icon/百亿补贴.png",
+      badge: "低价"
+    },
+    {
+      text: "商品秒杀",
+      icon: "http://jkw.life:8020/icon/商品秒杀.png",
+      badge: "5:00"
+    },
+    {
+      text: "新人红包",
+      icon: "http://jkw.life:8020/icon/新人红包.png",
+      badge: "￥99"
+    },
+    {
+      text: "充值中心",
+      icon: "http://jkw.life:8020/icon/充值中心.png",
+      badge: "优惠"
+    },
+    {
+      text: "新人福利",
+      icon: "http://jkw.life:8020/icon/新人福利.png",
+      badge: "福利"
+    },
+    {
+      text: "包邮",
+      icon: "http://jkw.life:8020/icon/包邮.png"
+    },
+    {
+      text: "全部频道",
+      icon: "http://jkw.life:8020/icon/全部频道.png"
+    },], // 到家服务菜单
 		isFirst: true,
 	},
 	computed: {
@@ -35,70 +72,7 @@ Page({
 			}
 		},
 	},
-	toHomeService() {
-		wx.showToast({
-			title: '功能暂未开放，敬请期待!',
-			icon: 'none'
-		})
-	},
-	navigateToPage(e) {
-		if (app.globalData.status === -1 || wx.getStorageSync('convenience-login') !== 'true') {
-			relaunch('auth', {
-				from: 'index/home'
-			})
-			return
-		}
-		const {url, id: menuId, status} = e.currentTarget.dataset
-		if (status === 0) {
-			if (!constants.NO_TRACK_MENU.includes(url)) {
-				addTrack({menuName: e.currentTarget.dataset.track})
-				setMenuId(menuId)
-			}
-			wx.navigateTo({url})
-			return
-		}
-		showToast('服务暂未开通，敬请期待')
-	},
-	toNotice() {
-		if (app.globalData.status === -1 || wx.getStorageSync('convenience-login') !== 'true') {
-			relaunch('auth', {
-				from: 'index/home'
-			})
-			return
-		}
-		navigateTo('notice/index')
-	},
-	getNotice() {
-		this.data.isFirst = false;
-		siteMessageList({
-			pageIndex: 1,
-			pageSize: 20
-		}, (data) => {
-			let recordList = [], recordList2 = []
-			data.recordList.forEach(function (item, index) {
-				if (item.msgType == 0) {
-					item.msgTypeName = '公告消息';
-				} else if (item.msgType == 1) {
-					item.msgTypeName = '失物招领';
-				} else if (item.msgType == 2) {
-					item.msgTypeName = '到期提醒';
-				} else if (item.msgType == 300) {
-					item.msgTypeName = '系统通知';
-				}
-				if (index % 2 == 0) {
-					recordList.push(item)
-				} else {
-					recordList2.push(item)
-				}
-			})
-			this.setData({
-				currentIndex: 0,
-				msgList: recordList,
-				msgList2: recordList2
-			})
-		})
-	},
-	initPageInfo() {
+  initPageInfo() {
 		const menuButtonObject = wx.getMenuButtonBoundingClientRect()
 		const systemInfo = wx.getSystemInfoSync()
 		//导航高度
@@ -113,44 +87,19 @@ Page({
 			statusBarHeight: navTop + navObj + 10
 		})
 	},
-	initMenus() {
-		const menus = app.globalData.menus.map(item => ({...item, iconUri: constants.imageBaseUrl + item.iconUri}))
-		const homeServiceMenuList = menus.slice(-3)
-		const mainMenuList = menus.slice(0, -3)
-		this.setData({
-			mainMenuList,
-			homeServiceMenuList
-		})
+	navigateToPage(e) {
+		const {url, id: menuId, status} = e.currentTarget.dataset
+    wx.navigateTo( { url:'/pages/shopping/shopping-cart/index'})
 	},
 	async initQueryInfo() {
-		this.initMenus()
-		this.getNotice()
 	},
 	async onLoad(options) {
-		this.authStoreInstance = createStoreBindings(this, {
-			store: authStore,
-			fields: ['token']
-		})
-		this.authStoreInstance.updateStoreBindings()
-		this.initPageInfo()
-		app.globalData.homeQueryCallBack = () => {
-			this.initQueryInfo()
-		}
+    this.initPageInfo()
 	},
 	onShow() {
-		if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-			this.getTabBar().setData({
-				// 当前页面的 tabBar 索引
-				active: 0
-			})
-		}
-		if (wx.getStorageSync('convenience-login') === 'true' && app.globalData.profile.profile) {
-			relaunch(app.globalData.profile.profile.path, {}, true)
-		}
-		this.data.token && this.initQueryInfo()
 	},
 	onUnload() {
-		this.authStoreInstance.destroyStoreBindings()
+    
 	},
 	onPullDownRefresh() {
 	},

@@ -33,8 +33,8 @@
       <text class="title-text text-xl-2">请选择需要的服务</text>
     </view>
   <!--导航 start-->
-  <van-grid column-num="4">
-    <van-grid-item catch:tap="navigateToPage" wx:for="{{navData}}" icon="{{item.icon}}" text="{{item.text}}" badge="{{item.badge}}" />
+  <van-grid column-num="3">
+    <van-grid-item catch:tap="navigateToPage" wx:for="{{navData}}" icon="{{item.icon}}" text="{{item.text}}" />
   </van-grid>
   </view>
   <view class="bottom"></view>

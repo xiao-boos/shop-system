@@ -1,0 +1,28 @@
+<van-popup
+  show="{{ popupShow }}"
+  bind:close="onClose"
+  position="bottom"
+  closeable
+>
+  <view class="{{isTabbarPage ? 'placeholder' : ''}} cancel-container">
+    <text class="text-xl text-black-2">申请退款</text>
+    <text class="cancel-container__tips">申请退款，需先与商家沟通并达成一致，以便尽快为您办理</text>
+    <text class="text-xl text-black cancel-container__title">请选择申请退款的原因（必选）</text>
+    <view class="cancel-container__list">
+      <view
+        wx:for="{{commentList}}"
+        wx:key="index"
+        data-index="{{item.index}}"
+        data-text="{{item.text}}"
+        catch:tap="selectReason"
+        class="cancel-container__item"
+      >
+        <view class="circle {{selectedIndex === item.index ? 'selected-circle' : ''}}"></view>
+        <text class="text-l text-gray {{selectedIndex === item.index ? 'selected-text' : ''}}">{{item.text}}</text>
+      </view>
+    </view>
+    <view class="cancel-container__btn">
+      <van-button catch:tap="cancelUnPaidOrder" round custom-class="primary-btn">提交</van-button>
+    </view>
+  </view>
+</van-popup>

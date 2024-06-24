@@ -1,0 +1,21 @@
+<view class="card-content">
+  <view
+    wx:for="{{filteredProductList}}"
+    wx:key="index"
+    class="card-content__item"
+  >
+    <view class="info">
+      <image src="{{picUrl+item.pictureFileId}}" class="img" />
+      <text class="text-l">{{item.productName}}</text>
+    </view>
+    <text class="text-m">×{{item.count}}</text>
+  </view>
+  <view
+    wx:if="{{showExpand}}"
+    catch:tap="expandAllProduct"
+    class="more"
+  >
+    <text>展开</text>
+    <image src="{{morePic}}" class="more-img"></image>
+  </view>
+</view>

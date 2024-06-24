@@ -11,3 +11,179 @@ page {
   position: relative;
   background-color: app.$bg-color-gray;
 }
+
+.header {
+  @include app.flex(row, space-around, center);
+  width: 100vw;
+  height: 100rpx;
+  background-color: app.$bg-color-white;
+
+  .header-tabBar {
+    position: relative;
+    @include app.flex(row, center, center);
+    height: 100%;
+  }
+
+  .active-tabBar {
+    font-weight: bold;
+    color: app.$text-color-blue-dimmer;
+
+    &::after {
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      content: '';
+      width: 60rpx;
+      height: 12rpx;
+      background-color: app.$bg-color-blue-dimmer;
+      border-radius: 7rpx;
+    }
+  }
+}
+
+.content-tab {
+  @include app.flex(row, flex-start, center, 20rpx);
+  height: 100rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  margin: 20rpx 0 20rpx 0;
+  overflow-x: auto;
+
+  .content-tab__item {
+    @include app.flex(row, center, center);
+    min-width: 140rpx;
+    height: 70rpx;
+    background-color: app.$bg-color-white;
+    border-radius: 10rpx;
+
+    &:last-child {
+      margin-right: 20rpx;
+    }
+  }
+
+  .selected-item {
+    color: app.$text-color-blue-dimmer;
+  }
+}
+
+.empty-status {
+  padding-top:20rpx ;
+  @include app.flex(column, flex-start, center, 10rpx);
+  width: 100vw;
+
+  .img {
+    width: 310rpx;
+    height: 265rpx;
+  }
+
+  .dot {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    background-color: app.$bg-color-white;
+  }
+}
+
+.content-list {
+  @include app.flex(column, flex-start, center, 20rpx);
+  width: 100vw;
+  height: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.placeholder {
+  height: 150rpx;
+}
+
+.data-list {
+  width: 100vw;
+  height: 10vh;
+}
+
+.custom-scroll {
+  max-height: calc(100vh - 220rpx - 155rpx - constant(safe-area-inset-bottom));
+  max-height: calc(100vh - 220rpx - 155rpx - env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.container {
+  @include app.flex(column, flex-start, center, 50rpx);
+  width: 100vw;
+  height: 80vh;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx 10rpx 0px 0rpx;
+
+  .container-rating {
+    @include app.flex(column, flex-start,center, 30rpx);
+
+  }
+
+  .split-line {
+    width: 100%;
+    border-bottom: 1px solid app.$border-color-3;
+  }
+
+  .container-desc {
+    width: 100%;
+    height: 100px;
+
+    .van-cell {
+      padding: 0 !important;
+    }
+  }
+
+  .container-pic {
+    width: 100%;
+
+    .img {
+      width: 120rpx;
+      height: 96rpx;
+    }
+  }
+
+  .primary-btn {
+    @include app.btn(500rpx);
+  }
+}
+
+.placeholder {
+  padding-bottom: 140rpx !important;
+}
+
+.van-field__body--textarea {
+  max-height: 270rpx !important;
+}
+
+.van-field__control--textarea {
+  max-height: 270rpx !important;
+}
+
+.confirm-quit {
+  display: flex;
+  flex-direction: column;
+  gap: 50rpx;
+  width: 75vw;
+  padding: 40rpx 45rpx 60rpx 45rpx;
+  box-sizing: border-box;
+
+  .confirm-quit__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .primary-btn {
+    @include app.btn(200rpx);
+    height: 70rpx !important;
+  }
+
+  .gray-btn {
+    @include app.btn(200rpx, app.$text-color-gray, app.$bg-color-white);
+    border-color: app.$text-color-gray !important;
+    height: 70rpx !important;
+  }
+}
+

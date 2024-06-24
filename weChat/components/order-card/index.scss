@@ -1,0 +1,85 @@
+@use 'app';
+
+.card {
+  @include app.flex(column, flex-start, flex-start, 35rpx);
+  width: calc(100vw - 40rpx);
+  min-height: 365rpx;
+  padding: 25rpx 20rpx 25rpx 45rpx;
+  box-sizing: border-box;
+  background-color: app.$bg-color-white;
+  border-radius: 15rpx;
+
+  .card-title {
+    @include app.flex(row, space-between, center);
+    width: 100%;
+    height: 45rpx;
+  }
+
+  .card-content {
+    @include app.flex(column, flex-start, flex-start, 10rpx);
+    width: 100%;
+
+    .card-content__item {
+      @include app.flex(row, space-between, center);
+      width: 100%;
+      height: 80rpx;
+
+      .info {
+        @include app.flex(row, flex-start, center, 15rpx);
+        height: 100%;
+
+        .info-text {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .img {
+        width: 90rpx;
+        height: 80rpx;
+      }
+    }
+
+    .more {
+      @include app.flex(row, flex-start, center, 15rpx);
+
+      .more-img {
+        width: 24rpx;
+        height: 24rpx;
+      }
+    }
+  }
+
+  .card-price {
+    margin-left: auto;
+  }
+
+  .card-btn {
+    @include app.flex(row, flex-start, center, 25rpx);
+    margin-left: auto;
+
+    .primary-btn {
+      @include app.btn(200rpx);
+      height: 70rpx !important;
+    }
+
+    .red-btn {
+      width: 200rpx;
+      height: 70rpx !important;
+      color: #fff !important;
+      background-color: #ff654a !important;
+    }
+
+    .blue-btn {
+      @include app.btn(200rpx, app.$text-color-blue-dimmer, app.$bg-color-white);
+      border-color: app.$primary-color !important;
+      height: 70rpx !important;
+    }
+
+    .gray-btn {
+      @include app.btn(200rpx, app.$text-color-gray, app.$bg-color-white);
+      border-color: app.$text-color-gray !important;
+      height: 70rpx !important;
+    }
+  }
+}

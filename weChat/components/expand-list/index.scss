@@ -1,0 +1,31 @@
+@use 'app';
+
+.card-content {
+  @include app.flex(column, flex-start, flex-start, 10rpx);
+  width: 100%;
+
+  .card-content__item {
+    @include app.flex(row, space-between, center);
+    width: 100%;
+    height: 80rpx;
+
+    .info {
+      @include app.flex(row, flex-start, center, 15rpx);
+      height: 100%;
+    }
+
+    .img {
+      width: 120rpx;
+      height: 80rpx;
+    }
+  }
+
+  .more {
+    @include app.flex(row, flex-start, center, 5rpx);
+
+    .more-img {
+      width: 24rpx;
+      height: 24rpx;
+    }
+  }
+}

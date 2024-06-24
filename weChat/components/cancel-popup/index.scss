@@ -1,0 +1,58 @@
+@use 'app';
+
+.cancel-container {
+  @include app.flex(column, flex-start, center, 30rpx);
+  width: 100vw;
+  height: 80vh;
+  padding: 30rpx 35rpx 45rpx 35rpx;
+  box-sizing: border-box;
+
+  .cancel-container__tips {
+    width: 100%;
+    padding: 25rpx 20rpx;
+    box-sizing: border-box;
+    color: app.$text-color-gray;
+    background-color: app.$bg-color-blue-lighter-3;
+    border-radius: 10rpx;
+  }
+
+  .cancel-container__title {
+    align-self: flex-start;
+  }
+
+  .cancel-container__list {
+    @include app.flex(column, flex-start, flex-start, 45rpx);
+    align-self: flex-start;
+
+    .cancel-container__item {
+      @include app.flex(row, flex-start, center, 15rpx);
+
+      .circle {
+        width: 26rpx;
+        height: 26rpx;
+        border: 1px solid app.$border-color;
+        border-radius: 50%;
+      }
+
+      .selected-circle {
+        border-color: app.$primary-color;
+        background-color: app.$primary-color;
+      }
+
+      .selected-text {
+        color: app.$text-color-blue-dimmer;
+      }
+    }
+  }
+
+  .cancel-container__btn {
+    margin-top: auto;
+    .primary-btn {
+      @include app.btn(500rpx);
+    }
+  }
+}
+
+.placeholder {
+  padding-bottom: 140rpx !important;
+}

@@ -1,0 +1,53 @@
+<view class="card">
+  <view class="card-title">
+    <view
+      catch:tap="navigateToDetail"
+      class="card-title__text"
+    >
+      <text>{{category.cspName}}</text>
+      <van-icon name="arrow"/>
+    </view>
+    <text wx:if="{{status === '待支付'}}" class="text-s-3 text-red">有退款</text>
+  </view>
+
+  <view
+    catch:tap="navigateToDetail"
+    class="card-content"
+  >
+    <view
+      wx:if="{{ category.category !== 3 && category.category !== 4 }}"
+      wx:for="{{ filteredProductList }}"
+      wx:key="index"
+      class="card-content__item"
+    >
+      <view class="info">
+        <image src="{{ item.pictureFileId }}" class="img"/>
+        <text class="text-l">{{item.productName}}</text>
+      </view>
+      <text class="text-m">×{{item.count}}</text>
+    </view>
+    <view
+      wx:if="{{ showExpand }}"
+      catch:tap="expandAllProduct"
+      class="more"
+    >
+      <text>展开</text>
+      <image src="{{ morePic }}" class="more-img"/>
+    </view>
+  </view>
+
+  <view class="card-price {{status === '已取消' ? 'text-gray' : 'text-red'}}">
+    合计：{{ category.totalAmount }}
+  </view>
+  <view class="card-btn">
+    <van-button
+      wx:for="{{ btnArr }}"
+      wx:key="index"
+      catch:tap="{{ item.methodName }}"
+      round
+      custom-class="{{ item.className }}"
+    >
+      {{item.text}}
+    </van-button>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!-- 订单状态 -->
+<view class="header" id="mark">
+  <view
+    wx:for="{{tabBarList}}"
+    wx:key="index"
+    data-text="{{item.text}}"
+    data-index="{{item.index}}"
+    catch:tap="selectTab"
+    class="header-tabBar {{activeIndex === item.index ? 'active-tabBar' : ''}}"
+  >
+    <text class="text-xl-2">{{item.text}}</text>
+  </view>
+</view>
+
+<view wx:if="{{currCategoryList.length === 0}}" class="empty-status">
+  <image src="../../../image/empty_order.png" class="img"/>
+  <text class="text-l text-gray">暂无订单</text>
+</view>
+
+<scroll-view
+  wx:else
+  bindscrolltolower="loadMore"
+  bindrefresherrefresh="onScrollRefresh"
+  refresher-enabled="{{true}}"
+  refresher-threshold="{{45}}"
+  refresher-default-style="black"
+  refresher-background="#f0f0f0"
+  refresher-triggered="{{triggered}}"
+  scroll-y="{{true}}"
+  class="custom-scroll"
+>
+  <view class="content-list">
+    <order-card
+      wx:for="{{currCategoryList}}"
+      wx:key="index"
+      category="{{item}}"
+      status="{{orderStatus}}"
+      class="content-list__item"
+      bind:continuetopay="OnContinueToPay"
+      bind:refreshquery="refreshQuery"
+      bind:setpopupshow="setPopupShow"
+      bind:navigatedetail="navigateToDetailPage"
+      bind:merchantFinish="merchantHasFinished"
+    />
+  </view>
+</scroll-view>

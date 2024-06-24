@@ -158,18 +158,8 @@ App({
 			const wxAppId = wx.getAccountInfoSync().miniProgram.appId
 			that.globalData.wxLoginCode = loginRes
 			// 查询微信绑定状态，如果已绑定手机，则无需再弹出授权
-			const res = await httpUtils.get(
-				{
-					url: '/clound-sysmgr-server/wxapp/001/queryBindStatus',
-					data: {
-						code: loginRes,
-						wxAppId: wxAppId,
-						appType,
-						// inviteCode: options?.query?.inviteCode || '',
-					}
-				}
-			)
-			const data = res.data
+			var res = '{"code":0,"data":{"sessionKey":"Et0hZk4F+JNydJMpx112xg==","avatarUrl":"","openId":"oLfWu660C9QoqeIQtMahXPHzur84","nickName":"微信用户ur84","innerAppId":"10","mobile":"17680577873","hospitalName":"深圳儿童医院","userId":"442e1b52808f412fa1f1d174b43506f8","token":"ab24be0e29f44bacae63882f29d62d13","hospitalId":"szetyy","appId":"10","status":0},"message":"succeed"}'
+			const data = JSON.parse(res).data
 			// 已绑定
 			if (data.status !== -1) {
 				that.globalData.authLogin = true

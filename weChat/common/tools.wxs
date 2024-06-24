@@ -1,0 +1,25 @@
+/**
+ * 公用脱敏方法
+ * @param str 脱敏字符串
+ * @param begin 起始保留长度，从0开始
+ * @param end 结束保留长度，到str.length结束
+ * @returns {string}
+ */
+function desensitizedCommon(str, begin, end) {
+  if (!str || begin + end >= str.length) {
+    return '';
+  }
+
+  var leftStr = str.substring(0, begin);
+  var rightStr = str.substring(str.length - end, str.length);
+
+  var strCon = '';
+  for (var i = 0; i < str.length - end - begin; i++) {
+    strCon += '*';
+  }
+  return leftStr + strCon + rightStr;
+}
+
+module.exports = {
+  desensitizedCommon: desensitizedCommon,
+};

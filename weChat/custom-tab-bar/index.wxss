@@ -1,0 +1,10 @@
+.index-tabbar {
+  --tabbar-item-font-size: 24rpx;
+  --tabbar-height: 118rpx;
+  z-index: 999 !important;
+}
+
+
+.custom-tabbar {
+  z-index: 999 !important;
+}

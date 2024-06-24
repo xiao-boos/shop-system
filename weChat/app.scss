@@ -1,0 +1,134 @@
+/* common color */
+$primary-color: #3d61fb;
+$secondary-color: #1FD0A2;
+$primary-color-green: #32c87f;
+$primary-color-orange: #FF9900;
+$primary-color-red: #ff654a;
+/* text-color */
+$text-color-white: #fff;
+$text-color-black: #333333;
+$text-color-black-2: #222222;
+$text-color-black-3: #191919;
+$text-color-black-4: #2F2F2F;
+$text-color-orange: $primary-color-orange;
+$text-color-orange-2: #FF6929;
+$text-color-gray: #666666;
+$text-color-gray-2: #999999;
+$text-color-gray-3: #c3c3c3;
+$text-color-gray-lighter: #a1a1a1;
+$text-color-gary-lighter-2: #B5B5B5;
+$text-color-red: #ff654a;
+$text-color-blue: #0095F0;
+$text-color-blue-dimmer: $primary-color;
+$text-color-pink: #FA8989;
+$text-color-pink-2: #c6eae0;
+$text-color-green: $primary-color-green;
+$text-color-green-dimmer: #05AD67;
+/* bg-color */
+$bg-color-white: #fff;
+$bg-color-blue: #42B6FD;
+$bg-color-blue-lighter: #edf1ff;
+$bg-color-blue-lighter-2: #dbe1ff;
+$bg-color-blue-lighter-3: #ebeffe;
+$bg-color-blue-dimmer: $primary-color;
+$bg-color-pink: #FA8989;
+$bg-color-gray: #F0F0F0;
+$bg-color-gray-2: #d3d3d3;
+$bg-color-gray-dimmer: #aeaeae;
+$bg-color-green: #d2f6ec;
+$bg-color-green-dimmer: #c6eae0;
+$bg-color-green-lighter: #d2f6ec;
+$bg-color-orange: #feeded;
+$bg-color-orange-2: #ffe7c2;
+$bg-color-yellow: #fff1db;
+$bg-color-yellow-lighter: #fff2de;
+$bg-color-green: $primary-color-green;
+$bg-color-red: $primary-color-red;
+/* border 边框颜色 */
+$border-color: #AAAAAA;
+$border-color-2: #797979;
+$border-color-3: #c3c3c3;
+$border-color-3: #c1c1c1;
+$border-color-4: #e0e0e0;
+
+page {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --popup-round-border-radius: 10rpx;
+}
+
+
+$lights: (
+    'primary': $primary-color,
+    'gray': $text-color-gray,
+    'gray-2': $text-color-gray-2,
+    'gray-lighter': $text-color-gary-lighter-2,
+    'orange': $text-color-orange,
+    'green': $text-color-green,
+    'green-dimmer': $text-color-green-dimmer,
+    'blue-dimmer': $text-color-blue-dimmer,
+    'red': $text-color-red,
+    'black': $text-color-black,
+    'black-2': $text-color-black-2,
+    'black-3': $text-color-black-3,
+    'black-4': $text-color-black-4,
+    'white': $text-color-white
+);
+
+$fontSizes: (
+    's': 16rpx,
+    's-2': 20rpx,
+    's-3': 24rpx,
+    'm': 26rpx,
+    'l': 28rpx,
+    'l-2': 30rpx,
+    'xl': 32rpx,
+    'xl-1': 34rpx,
+    'xl-2': 36rpx,
+    'xxl': 42rpx,
+    'xxxl': 48rpx,
+    'xxxxl': 64rpx
+);
+
+.text-bold {
+  font-weight: bold;
+}
+
+/* mixin functions */
+@mixin flex( $flex-direction: row, $justify-content: flex-start, $align-items: stretch, $gap-space: 0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap-space;
+}
+
+@mixin pic($pic-width: 300rpx, $pic-height: 200rpx) {
+  width: $pic-width;
+  height: $pic-height;
+}
+
+@mixin btn($btn-width: 600rpx, $btn-text-color: #fff, $bg-color: $primary-color) {
+  width: $btn-width;
+  color: $btn-text-color !important;
+  background-color: $bg-color !important;
+}
+
+@each $key, $val in $lights {
+  .text-#{$key} {
+    color: $val;
+  }
+}
+
+@each $key, $val in $lights {
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}
+
+@each $key, $val in $fontSizes {
+  .text-#{$key} {
+    font-size: $val;
+  }
+}

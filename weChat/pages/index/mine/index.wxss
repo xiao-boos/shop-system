@@ -1,0 +1,143 @@
+.container {
+    height: 90vh;
+    position: relative;
+    background-color: rgb(240, 240, 240);
+    z-index: 0;
+}
+
+.mine-header {
+    width: 100%;
+    height: 10vh;
+    background-color: #3D61FB;
+    line-height:15vh;
+  }
+  .mine-header .title{
+    padding-left: 32rpx;
+    font-size: 36rpx;
+    color: #fff;
+  }
+.top-container {
+    padding-bottom: 50rpx;
+    padding-top: 35rpx;
+    position: relative;
+    flex-direction: column;
+    background-color: #3D61FB;
+    z-index: -1;
+    margin-bottom: 20rpx;
+}
+
+.view_image_text {
+    text-align: center;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+.userName {
+    font-size: 32rpx;
+    font-family: PingFang SC, PingFang SC-Normal;
+    font-weight: normal;
+    text-align: LEFT;
+    color: #ffffff;
+}
+
+.image_location {
+    margin-top: 7rpx;
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.image_radius {
+    margin: 0 auto;
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 60px;
+}
+
+
+
+.view_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.view_tupianwenzi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    text-align: center;
+}
+
+.view_qrcode {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 300rpx;
+    margin-right: 25rpx;
+}
+
+.view_image_qrcode {
+    width: 478rpx;
+    height: 478rx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image_qrcode{
+    width: 358rpx;
+    height: 358rpx;
+    padding : 50rpx;
+}
+
+
+.image_tupian {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.image_shadow {
+    margin: 5rpx 10rpx 20rpx;
+    display: flex;
+    width: 36rpx;
+    height: 36rpx;
+}
+/* 第4部分--*/
+.container_4 {
+
+    width: 710rpx;
+    flex-direction: column;
+    border-radius: 15rpx;
+    background-color: #FFFFFF;
+    margin:0 auto;
+}
+
+
+.image_tupian_1 {
+    width: 56rpx;
+    height: 56rpx;
+    margin-right: 20rpx;
+}
+.buttonView{
+    margin-top: 114rpx;
+    text-align: center;
+    padding-bottom: 20rpx;
+}
+
+.cellClass{
+    border-radius: 15rpx;
+    height: 110rpx;
+  
+}
+
+.title-class{
+    font-size: 32rpx;
+}
+
+.van-cell:after {
+    border-bottom: none !important;
+    border-bottom-style: none !important;
+}

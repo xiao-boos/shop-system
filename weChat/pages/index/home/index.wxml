@@ -1,0 +1,44 @@
+<view class="home-container">
+  <view class="home-container__header">
+    <view class="banner">
+      <image src="{{getPic.bannerPic}}" class="banner-img"></image>
+      <view class="banner-text" style="top: {{statusBarHeight}}px">
+        <text class="banner-text__title text-xl text-blue-dimmer">{{bannerText.title}}</text>
+        <text class="text-xxl">{{bannerText.subTitle}}</text>
+        <text class="text-m">{{bannerText.content}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="home-container__grid">
+    <van-grid border="{{ false }}" column-num="4">
+      <van-grid-item
+        wx:for="{{ mainMenuList }}"
+        wx:key="uri"
+        data-url="{{item.uri}}"
+        data-track="{{item.menuName}}"
+        data-id="{{item.menuId}}"
+        data-status="{{item.status}}"
+        catch:tap="navigateToPage"
+        use-slot
+      >
+        <image src="{{item.iconUri }}" class="grid-icon"/>
+        <view class="text-m">{{ item.menuName }}</view>
+      </van-grid-item>
+    </van-grid>
+  </view>
+  <view class="home-container__split"></view>
+  <view class="home-container__footer">
+    <view class="title">
+      <image src="{{getPic.titlePic}}" class="title-pic" />
+      <text class="title-text text-xl-2">到家服务</text>
+    </view>
+    <view class="card">
+      <image catch:tap="toHomeService" src="{{homeServiceMenuList[0].iconUri}}" class="left" />
+      <view class="right">
+        <image catch:tap="toHomeService" src="{{homeServiceMenuList[1].iconUri}}" class="right-top" />
+        <image catch:tap="toHomeService" src="{{homeServiceMenuList[2].iconUri}}" class="right-bottom" />
+      </view>
+    </view>
+  </view>
+  <view class="bottom"></view>
+</view>

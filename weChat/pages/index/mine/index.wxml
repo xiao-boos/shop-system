@@ -1,0 +1,34 @@
+<!--pages/jiaocheng/jiaocheng.wxml-->
+<view class="mine-header">
+	<view class="title">我的</view>
+</view>
+<view class='container'>
+    <view class='top-container'>
+        <van-row>
+            <van-col span="5">
+                <view class="view_image_text">
+                    <image class="image_radius" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
+                    <van-icon class="image_radius" wx:else name="contact" size="50px" />
+                </view>
+            </van-col>
+            <van-col span="19" catch:tap="login">
+                <view class="view_image_text">
+                    <view class="userName">{{convenienceLogin?mobile:"点击登录"}}</view>
+                </view>
+            </van-col>
+        </van-row>
+    </view>
+	<view class='container_4'>
+        <van-cell center title="地址管理" custom-class="cellClass" title-class="title-class" is-link data-id="index/mine/address-msg" catch:tap="toPage">
+            <image class='image_tupian_1' src='{{address}}' slot="icon"></image>
+        </van-cell>
+	</view>
+    <view class="buttonView">
+        <van-button  round  size="large" catch:tap="unLogin" custom-style=" width: 480rpx;height: 80rpx;border-radius: 40rpx;color: #7e7e7e;background: #d7d7d7;font-size:32rpx">退出登录</van-button>
+    </view>
+    <van-popup show="{{ showQrcode }}" round bind:close="onClose">
+        <view class="view_image_qrcode">
+            <image class="image_qrcode" src="{{qrcodeImgData}}"></image> 
+        </view>
+    </van-popup>
+</view>

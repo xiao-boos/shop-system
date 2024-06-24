@@ -1,0 +1,73 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "weChat",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/shopping/index/index",
+          "pathName": "pages/shopping/index/index",
+          "query": "scene=recordId%3D318",
+          "launchMode": "default",
+          "scene": 1047
+        },
+        {
+          "name": "pages/index/home/index",
+          "pathName": "pages/index/home/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "即时购物",
+          "pathName": "pages/shopping/shopping-cart/index",
+          "query": "params=%257B%2522cspId%2522%253A%25221%2522%257D",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "授权登录",
+          "pathName": "pages/auth/index",
+          "query": ""
+        },
+        {
+          "name": "支付成功",
+          "pathName": "pages/shopping/payment-success/index",
+          "query": ""
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/index/order/detail-page/accompany-escort/index",
+          "query": ""
+        },
+        {
+          "name": "补缴订单",
+          "pathName": "pages/index/order/payback/deposit-payback/index",
+          "query": ""
+        },
+        {
+          "name": "角色切换",
+          "pathName": "pages/index/mine/role/index",
+          "query": ""
+        },
+        {
+          "name": "陪护商家端",
+          "pathName": "pages-doctor/pages/serve/index/index",
+          "query": ""
+        }
+      ]
+    }
+  },
+  "libVersion": "3.3.5"
+}

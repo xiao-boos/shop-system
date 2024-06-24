@@ -1,0 +1,13 @@
+@use 'app';
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+page {
+  position: relative;
+  background-color: app.$bg-color-gray;
+}

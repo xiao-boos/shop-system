@@ -1,0 +1,38 @@
+@use 'app';
+
+.container {
+  @include app.flex(row, center, flex-start);
+  width: 100vw;
+  height: 100vh;
+  padding-top: 150rpx;
+  box-sizing: border-box;
+
+  .container-content {
+    @include app.flex(column, space-between, center);
+    width: 65%;
+    height: 80%;
+
+    .container-content__header {
+      @include app.flex(column, space-between, center);
+
+      .img {
+        width: 240rpx;
+        height: 240rpx;
+      }
+
+      .tips {
+        margin-top: 60rpx;
+      }
+    }
+
+    .container-content__footer {
+      @include app.flex(row, space-between, center);
+      width: 100%;
+
+      .btn {
+        @include app.btn(200rpx, app.$text-color-blue-dimmer, app.$bg-color-white);
+        border: 1px solid app.$text-color-blue-dimmer;
+      }
+    }
+  }
+}

@@ -40,7 +40,8 @@ Page({
 		leftHeight: 0,
 		stopPopupShow: false, // 商家暂停营业弹窗控制
 		suspendDate: '', // 暂停营业弹窗的恢复时间
-		haveMultiCanteens: false, // 是否有多个店铺
+    haveMultiCanteens: false, // 是否有多个店铺
+    searchVale:''//搜索内容
 	},
 	computed: {
 		getPic() {
@@ -52,7 +53,13 @@ Page({
 				minusPic: `${constants.imageBaseUrl}/shopping/minus_icon.png`,
 			}
 		},
-	},
+  },
+  onSearch() {
+    wx.showToast({
+      title: this.data.scrollVal,
+      icon: 'none'
+    })
+  },
 	/**
 	 * 选择左边菜单栏
 	 * @param {Event} e

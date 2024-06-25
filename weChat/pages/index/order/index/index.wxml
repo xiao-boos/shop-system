@@ -17,18 +17,7 @@
   <text class="text-l text-gray">暂无订单</text>
 </view>
 
-<scroll-view
-  wx:else
-  bindscrolltolower="loadMore"
-  bindrefresherrefresh="onScrollRefresh"
-  refresher-enabled="{{true}}"
-  refresher-threshold="{{45}}"
-  refresher-default-style="black"
-  refresher-background="#f0f0f0"
-  refresher-triggered="{{triggered}}"
-  scroll-y="{{true}}"
-  class="custom-scroll"
->
+
   <view class="content-list">
     <order-card
       wx:for="{{currCategoryList}}"
@@ -43,4 +32,3 @@
       bind:merchantFinish="merchantHasFinished"
     />
   </view>
-</scroll-view>

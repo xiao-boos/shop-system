@@ -14,7 +14,15 @@
     </view>
   </view>
 </view>
-
+<!--搜索框  主页代码-->
+<view class='page_row'>
+    <view class="search">
+        <view class="search_arr">
+            <icon class="searchcion" size='20' type='search' bindtap='onSearch'></icon>
+            <input class="sousuo" value="{{searchVale}}"  placeholder="搜索"  />
+        </view>
+    </view>
+</view>
 <view class="shop-tips" id="mark">
   <view class="shop-tips__dot"></view>
   <text class="text-m">配送时间约15-30分钟</text>

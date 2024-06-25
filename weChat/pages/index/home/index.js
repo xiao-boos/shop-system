@@ -2,7 +2,6 @@ import constants from "../../../common/constants"
 import utils from "../../../utils/index"
 import {MENU_HOME} from '../../../utils/menu'
 import {navigateTo, relaunch} from "../../../utils/wxUtils"
-import {siteMessageList} from "../../../utils/service-api"
 import {authStore} from '../../../store/index'
 
 const computedBehavior = require('miniprogram-computed').behavior
@@ -27,11 +26,6 @@ Page({
      navData: [{
       text: "榜单",
       icon: "http://jkw.life:8020/icon/榜单.png"
-    },
-    {
-      text: "百亿补贴",
-      icon: "http://jkw.life:8020/icon/百亿补贴.png",
-      badge: "低价"
     },
     {
       text: "商品秒杀",

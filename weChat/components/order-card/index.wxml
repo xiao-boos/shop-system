@@ -4,18 +4,14 @@
       catch:tap="navigateToDetail"
       class="card-title__text"
     >
-      <text>{{category.cspName}}</text>
-      <van-icon name="arrow"/>
-    </view>
-    <text wx:if="{{status === '待支付'}}" class="text-s-3 text-red">有退款</text>
-  </view>
+      <text>{{category.beginDate}}</text>
+    </view></view>
 
   <view
     catch:tap="navigateToDetail"
     class="card-content"
   >
     <view
-      wx:if="{{ category.category !== 3 && category.category !== 4 }}"
       wx:for="{{ filteredProductList }}"
       wx:key="index"
       class="card-content__item"

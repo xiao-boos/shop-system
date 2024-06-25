@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="container-content">
+    <view class="container-content__header">
+      <image class="img" src="{{pic}}" />
+      <text class="text-xl-2 text-green">{{ pageText.text }}</text>
+      <text class="text-l text-gray tips">{{ pageText.tip }}</text>
+    </view>
+    <view class="container-content__footer">
+      <van-button
+        catch:tap="navigateToPage"
+        data-route="order"
+        round
+        custom-class="btn"
+      >
+        查看订单
+      </van-button>
+      <van-button
+        catch:tap="navigateToPage"
+        data-route="home"
+        round
+        custom-class="btn"
+      >
+        返回首页
+      </van-button>
+    </view>
+  </view>
+</view>

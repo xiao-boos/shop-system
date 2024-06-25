@@ -79,7 +79,7 @@ Page({
 	 */
 	async postOrder(shopInfo) {
 		try {
-			const res = await utils.post(shopInfo.url, {
+      const data = {
 				sessionId: Date.now() + '',
 				beginTime: this.data.timeGroup.beginTime,
 				endTime: this.data.timeGroup.endTime,
@@ -89,8 +89,7 @@ Page({
 				cspId: shopInfo.cspId,
 				category: shopInfo.category,
 				productInfo: shopInfo.productInfo
-			}, {
-			})
+			}
 			relaunch('shopping/payment-success', {
         orderType: this.data.shopText
       })

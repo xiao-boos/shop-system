@@ -4,7 +4,10 @@
     "pages/index/order/index/index",
     "pages/index/mine/index",
     "pages/shopping/shopping-cart/index",
-    "pages/shopping/confirm-order/index"
+    "pages/shopping/payment-success/index",
+    "pages/shopping/confirm-order/index",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "tabBar": {
     "custom": true,

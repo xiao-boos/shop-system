@@ -44,19 +44,20 @@ Page({
 		})
 	},
 	onShow() {
+    debugger
+    if (wx.getStorageSync('convenience-login') == 'true') {
+			this.setData({
+        convenienceLogin: wx.getStorageSync('convenience-login') === 'true',
+        nickName:wx.getStorageSync('userName')
+			})
+		}
 		if (typeof this.getTabBar === 'function' && this.getTabBar()) {
 			this.getTabBar().setData({
 				// 当前页面的 tabBar 索引
 				active: 2
 			})
 		}
-		if (wx.getStorageSync('convenience-login') == 'true') {
-			this.queryCardInfo()
-			this.queryReceiver()
-			this.setData({
-				convenienceLogin: wx.getStorageSync('convenience-login') === 'true'
-			})
-		}
+	
 	},
 	//退出登录
 	unLogin() {
@@ -85,9 +86,9 @@ Page({
 	//登录
 	login() {
 		if (wx.getStorageSync('convenience-login') !== 'true') {
-			relaunch('auth', {
-				from: 'index/mine'
-			})
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
 		}
 	},
 	onLoad: function (options) {

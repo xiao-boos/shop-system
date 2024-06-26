@@ -1,0 +1,47 @@
+.scroll {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 20rpx;
+}
+
+.loadmore {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.loadmore-tips {
+  vertical-align: middle;
+}
+
+.loadmore-icon {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background-size: 100%;
+}
+
+.bot-line {
+  color: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.bot-line::before,
+.bot-line::after {
+  content: "";
+  display: inline-block;
+  width: 24vw;
+  height: 1rpx;
+  background-color: #ddd;
+  vertical-align: super;
+  margin: 0 36rpx;
+}

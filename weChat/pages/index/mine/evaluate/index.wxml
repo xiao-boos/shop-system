@@ -1,0 +1,54 @@
+<!-- 订单状态 -->
+<view class="header" id="mark">
+  <view
+    wx:for="{{tabBarList}}"
+    wx:key="index"
+    data-text="{{item.text}}"
+    data-index="{{item.index}}"
+    catch:tap="selectTab"
+    class="header-tabBar {{activeIndex === item.index ? 'active-tabBar' : ''}}"
+  >
+    <text class="text-xl-2">{{item.text}}</text>
+  </view>
+</view>
+
+
+<view wx:if="{{currCategoryList.length === 0}}" class="empty-status">
+  <image src="{{getPic}}" class="img" />
+  <text class="text-l text-gray">暂无订单</text>
+</view>
+
+<scroll-view
+  bindscrolltolower="loadMore"
+  bindrefresherrefresh="onScrollRefresh"
+  refresher-enabled="{{true}}"
+  refresher-default-style="black"
+  refresher-background="#f0f0f0"
+  refresher-triggered="{{triggered}}"
+  scroll-y
+  class="custom-scroll"
+  style="height: {{scrollHeight}}"
+>
+  <view id="wp_list" class="content-list">
+    <comment-order-card
+      wx:for="{{currCategoryList}}"
+      wx:key="index"
+      category="{{item}}"
+      status="{{orderStatus}}"
+      class="content-list__item"
+      bind:refreshCommenQuery="refreshCommenQuery"
+      bind:showCommentPopup="OnshowCommentPopup"
+      bind:navigatedetail="navigateToDetailPage"
+    />
+  </view>
+</scroll-view>
+<comment-popup
+  popupShow="{{showCommentPopup}}"
+  outTradeNo="{{currOrderDetail.outTradeNo}}"
+  currOrderDetail="{{currOrderDetail}}"
+  isDetailPage="{{ true }}"
+  bind:setpopupshow="setpopupshow"
+  bind:refreshCommenQuery="refreshCommenQuery"
+/>
+
+

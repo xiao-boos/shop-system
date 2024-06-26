@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#3d61fb",
+    "navigationBarTitleText": "地址管理",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-popup": "@vant/weapp/popup/index"
+    }
+}

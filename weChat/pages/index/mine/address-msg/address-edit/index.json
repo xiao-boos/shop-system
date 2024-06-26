@@ -1,0 +1,15 @@
+{
+    "navigationBarBackgroundColor": "#3d61fb",
+    "navigationBarTitleText": "新增地址",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "area-picker": "../../../../../components/area-picker/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-switch": "@vant/weapp/switch/index",
+        "van-button": "@vant/weapp/button/index"
+        
+    }
+}

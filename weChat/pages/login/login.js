@@ -57,7 +57,7 @@ Page({
       if(userList){
         let admin = Array.from(userList);
           for (let i = 0; i < admin.length; i++) {  //遍历数据库对象集合
-            if (this.data.username === admin[i].username) { //账户已存在
+            if (this.data.username === admin[i].phone) { //账户已存在
               flag=true;
               if (this.data.password !== admin[i].password) {  //判断密码正确与否
                 wx.showToast({  //显示密码错误信息
@@ -67,19 +67,6 @@ Page({
                 });
                break;
               } else {
-                wx.showToast({  //显示登录成功信息
-                  title: '登陆成功！！',
-                  icon: 'success',
-                  duration: 2500
-                })
-                flag=true;
-                wx.setStorageSync('convenience-login','true')
-                wx.setStorageSync('username', this.data.username)
-                setTimeout(function() {
-                  wx.reLaunch({
-                    url: '/pages/index/home/index',
-                  })
-              },1000)
                 break;
               }
             }
@@ -91,6 +78,20 @@ Page({
               icon: 'error',
               duration: 2500
             })
+          }else{
+            wx.showToast({  //显示登录成功信息
+                title: '登陆成功！！',
+                icon: 'success',
+                duration: 2500
+              })
+              flag=true;
+              wx.setStorageSync('convenience-login','true')
+              wx.setStorageSync('username', this.data.username)
+              setTimeout(function() {
+                wx.reLaunch({
+                  url: '/pages/index/home/index',
+                })
+            },1000)
           }
       }else{
         wx.showToast({

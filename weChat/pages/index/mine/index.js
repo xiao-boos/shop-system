@@ -85,9 +85,9 @@ Page({
 	//登录
 	login() {
 		if (wx.getStorageSync('convenience-login') !== 'true') {
-      wx.navigateTo({
-        url: '/pages/login/login',
-      })
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
 		}
 	},
 	onLoad: function (options) {

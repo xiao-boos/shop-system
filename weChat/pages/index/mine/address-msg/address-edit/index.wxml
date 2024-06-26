@@ -1,0 +1,28 @@
+<!--pages/index/mine/address-msg/address-edit/index.wxml-->
+<view class="conven-index">
+    <view style="height: 5rpx;"></view>
+    <view class="formTable" style="margin-top: 20rpx;">
+        <van-field model:value="{{ contactPerson }}" label="收货人" placeholder="请输入" input-align="right"></van-field>
+        <view class="xian"></view> 
+        <van-field model:value="{{ contactPhone }}" label="手机号" placeholder="请输入" input-align="right" type="number"></van-field>
+    </view>
+    <view class="formTable" style="margin-top: 20rpx;">
+        <area-picker  areaValue="{{district}}"  bind:onAreaConfirm="getArea"></area-picker>
+        <view class="xian"></view> 
+        <van-field model:value="{{ homeAddr }}" label="" placeholder="请填写详细地址" input-align="right"></van-field>
+    </view>
+    <view class="formTable" style="margin-top: 20rpx;height: 80rpx;">
+        <view style="line-height: 80rpx !important;">
+            <van-row gutter="50">
+                <van-col span="16" offset="1"><text class="titleItem">设为默认地址</text>
+                </van-col>
+                <van-col span="4" >
+                    <van-switch checked="{{ checked }}" bind:change="defaultAddr" size="42rpx" />
+                </van-col>
+            </van-row>
+      </view>
+    </view>
+    <view class="buttonView">
+        <van-button  round size="large" catch:tap="submit" custom-style=" width: 600rpx;height: 88rpx;border-radius: 40rpx;background-color: #3D61FB;font-size:30rpx;color:#fff">保存</van-button>
+    </view>
+</view>

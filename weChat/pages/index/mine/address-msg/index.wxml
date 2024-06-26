@@ -1,0 +1,31 @@
+<!--pages/index/mine/address-msg/index.wxml-->
+<view class="conven-index">
+    <view style="background-color: white;width: 100%;height: 100rpx;">
+        <view style="height: 20rpx;"></view>
+        <van-row style="padding-top: 20rpx; margin: auto;">
+            <van-col span="18"><text class="text_addr"> ● 支持到家服务</text></van-col>
+            <van-col span="6">
+                <van-button type="primary" color="#3D61FB;" custom-style=" font-size: 26rpx;" size="small" plain round data-url="index/mine/address-msg/address-edit" catch:tap="toPage">新增地址</van-button>
+            </van-col>
+        </van-row>
+    </view>
+    <view class="from"  wx:for="{{ recordList }}" wx:key="index" >
+            <van-row custom-class="row">
+                <van-col span="6"><text class="text">{{item.contactPerson}}</text></van-col>
+                <van-col span="18" ><text class="text">{{item.contactPhone}}</text></van-col>
+            </van-row>
+            <van-row  custom-class="row">
+                <van-col span="24"><text class="text" style="font-size: 28rpx;">{{item.district+item.homeAddr}}</text></van-col>
+            </van-row>
+            <view style="height: 30rpx;"></view>
+            <van-row custom-class="row">
+                <van-col span="15" >
+                    <text class="moren_addr" wx:if="{{item.receiverType == 11 }}">默认地址</text>
+                    <view style="height: 10rpx;"></view>
+                </van-col>
+                <van-col span="4"><van-button type="default"  custom-style=" font-size: 26rpx;margin-right:15rpx" plain round  size="mini"  data-id="{{item.receiverId}}" catch:tap="delAddr">删除</van-button></van-col>
+                <van-col span="4" offset="1"><van-button type="default"   custom-style=" font-size: 26rpx;margin-right:15rpx" plain round  size="mini" data-data="{{item}}" data-url="{{'index/mine/address-msg/address-edit'}}" catch:tap="toPage">修改</van-button></van-col>
+            </van-row>
+        </view>
+    <view class="bottom">{{bottomStatus}}</view>
+</view>

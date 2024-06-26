@@ -1,0 +1,55 @@
+<view class="card">
+  <view class="card-title">
+    <view
+      catch:tap="navigateToDetail"
+      class="card-title__text"
+    >
+      <text>{{category.beginDate}}</text>
+      <van-icon name="arrow"/>
+    </view>
+  </view>
+  <view catch:tap="navigateToDetail" class="card-content"  wx:if="{{status !== '已评价'}}">
+    <view
+      wx:for="{{filteredProductList}}"
+      wx:key="index"
+      class="card-content__item"
+    >
+      <view class="info">
+        <image src="{{picUrl+item.pictureFileId}}" class="img"/>
+        <text class="text-l">{{item.productName}}</text>
+      </view>
+      <text class="text-m">×{{item.count}}</text>
+    </view>
+    <view
+      wx:if="{{showExpand}}"
+      catch:tap="expandAllProduct"
+      class="more"
+    >
+      <text>展开</text>
+      <image src="{{morePic}}" class="more-img"/>
+    </view>
+  </view>
+  <view catch:tap="navigateToDetail" class="card-content" wx:if="{{status === '已评价'}}">
+    <view style="font-size: 26rpx;text-align: LEFT;color: #666666;padding-right: 10rpx;">服务评分{{' '}}<van-rate value="{{ category.score }}" size="15px" gutter="10px" color="#ffd21e" bind:change="onChangeScore" />
+        <view style="font-size: 26rpx;text-align: LEFT;color: #666666;padding-top: 10rpx;">描述</view>
+        <view style="font-size: 28rpx;font-weight: normal;color: #333333;min-width: 50vh;">{{category.comment}}</view>
+        <view class="titleImage">
+                <van-row>
+                    <view wx:for="{{ category.pictureFileId }}" wx:for-item="it" wx:key="index">
+                        <van-col span="5">
+                            <van-image width="100rpx" height="100rpx" src="{{picUrl + it}}" data-url="{{picUrl + it}}" data-pictureFileids="{{category.pictureFileId}}" catch:tap="imagesPerview" />
+                        </van-col>
+                    </view>
+                </van-row>
+            </view>
+    </view>
+  </view>
+  <view wx:if="{{status === '待评价'}}" class="card-btn">
+    <van-button catch:tap="showCommentPopup" round custom-class="primary-btn">评价</van-button>
+  </view>
+  <view wx:if="{{status === '已评价'}}" class="card-btn">
+    <van-button catch:tap="showCommentPopup" size="large" type="text" custom-class="smallButton">修改</van-button>
+    <van-button catch:tap="showEvaluateDelPopup" size="large" type="text" custom-class="smallButton">删除</van-button>
+  </view>
+</view>
+

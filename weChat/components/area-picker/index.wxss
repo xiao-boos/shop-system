@@ -1,0 +1,33 @@
+/* 区域控件 */
+.city-area-picker-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  padding: 40rpx 60rpx;
+  transition: ease 0.3s;
+  transform: translateY(100%);
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 30rpx 30rpx 0 0;
+}
+.city-area-picker-title {
+  text-align: center;
+}
+.city-area-picker-btn-box {
+  display: flex;
+  font-weight: 600;
+  margin-top: 40rpx;
+  /* color: var(--theme-color); */
+  justify-content: space-around;
+}
+.city-area-picker-btn-box .city-area-picker-confirm-btn {
+  font-size: 28rpx;
+  color: var(--theme-color);
+}
+
+/* 地址栏 */
+.link {
+  color: #3d61fb !important;
+}

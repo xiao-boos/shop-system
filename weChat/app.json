@@ -7,7 +7,10 @@
     "pages/shopping/payment-success/index",
     "pages/shopping/confirm-order/index",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/index/mine/evaluate/index",
+    "pages/index/mine/address-msg/index",
+    "pages/index/mine/address-msg/address-edit/index"
   ],
   "tabBar": {
     "custom": true,

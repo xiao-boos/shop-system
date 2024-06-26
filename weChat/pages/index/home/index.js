@@ -72,8 +72,12 @@ Page({
 		})
 	},
 	navigateToPage(e) {
-		const {url, id: menuId, status} = e.currentTarget.dataset
-    wx.navigateTo( { url:'/pages/shopping/shopping-cart/index'})
+        if (wx.getStorageSync('convenience-login') != 'true') {
+            wx.navigateTo({
+                url: '/pages/login/login',
+              })
+		}
+         wx.navigateTo( { url:'/pages/shopping/shopping-cart/index'})
 	},
 	async initQueryInfo() {
 	},
@@ -81,6 +85,11 @@ Page({
     this.initPageInfo()
 	},
 	onShow() {
+        if (wx.getStorageSync('convenience-login') != 'true') {
+            wx.navigateTo({
+                url: '/pages/login/login',
+              })
+		}
 	},
 	onUnload() {
     

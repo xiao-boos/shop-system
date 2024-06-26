@@ -1,0 +1,54 @@
+<van-popup
+  show="{{ popupShow }}"
+  bind:close="onClose"
+  root-portal="{{ true }}"
+  safe-area-tab-bar="{{ isTabbarPage }}"
+  position="bottom"
+  closeable
+>
+  <view class="container">
+    <text class="text-xl text-black-2">评价</text>
+    <view class="container-rating">
+      <text>请为我们的服务打分</text>
+      <van-rate
+        value="{{ score }}"
+        size="{{ 25 }}"
+        gutter="20px"
+        color="#ffd21e"
+        void-icon="star"
+        void-color="#eee"
+        bind:change="onChange"
+      />
+    </view>
+    <view class="split-line"></view>
+    <view class="container-desc">
+      <text class="text-l-2 text-gray">描述</text>
+      <van-field
+        model:value="{{ comment }}"
+        type="textarea"
+        placeholder="请输入"
+        autosize="{{autoSizeData}}"
+        border="{{ false }}"
+      />
+    </view>
+    <view class="container-pic">
+      <view class="text-xl text-black">图片（选填）</view>
+      <view class="text-m text-gray" style="margin-bottom: 25rpx;">支持增加1-3张图片，每张图片大小不超过2M。</view>
+      <van-uploader
+        file-list="{{ fileList }}"
+        use-before-read="{{ true }}"
+        preview-size="100rpx"
+        catch:delete="deleteImg"
+        max-count="3"
+        deletable="{{ true }}"
+        max-size="{{1024*1024*2}}"
+        bind:before-read="beforeRead"
+        bind:after-read="afterRead"
+      >
+        <image class="img" src="{{photoIcon}}" bind:tap="customUploadEvent"/>
+      </van-uploader>
+    </view>
+
+    <van-button catch:tap="submitComment" round custom-class="primary-btn">立即提交</van-button>
+  </view>
+</van-popup>

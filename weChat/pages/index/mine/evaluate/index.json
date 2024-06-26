@@ -1,0 +1,20 @@
+{
+    "navigationBarBackgroundColor": "#3d61fb",
+    "navigationBarTitleText": "评价管理",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+      "comment-order-card": "../../../../components/comment-order-card/index",
+      "comment-popup": "../../../../components/comment-popup/index",
+      "pagination": "../../../../components/pagination/index",
+      "van-popup": "@vant/weapp/popup/index",
+      "van-image": "@vant/weapp/image/index",
+      "van-panel": "@vant/weapp/panel/index",
+      "van-row": "@vant/weapp/row/index",
+      "van-col": "@vant/weapp/col/index",
+      "van-icon": "@vant/weapp/icon/index",
+      "van-uploader": "@vant/weapp/uploader/index",
+      "van-button": "@vant/weapp/button/index",
+      "van-field": "@vant/weapp/field/index",
+      "van-rate": "@vant/weapp/rate/index"
+    }
+}

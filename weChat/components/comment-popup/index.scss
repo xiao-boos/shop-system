@@ -1,0 +1,63 @@
+@use 'app';
+
+page {
+  --cell-horizontal-padding: 0;
+}
+
+.container {
+  @include app.flex(column, flex-start, center, 50rpx);
+  width: 100vw;
+  min-height: 40vh;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx 10rpx 0 0;
+
+  .container-rating {
+    @include app.flex(column, flex-start, center, 30rpx);
+
+  }
+
+  .split-line {
+    width: 100%;
+    border-bottom: 1px solid app.$border-color-3;
+  }
+
+  .container-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 5rpx;
+    width: 100%;
+    min-height: 120px;
+    overflow: hidden;
+
+    .van-cell {
+      padding: 0 !important;
+    }
+
+    .van-field__body--textarea {
+      max-height: 100px !important;
+    }
+  }
+
+  .container-pic {
+    width: 100%;
+
+    .img {
+      width: 120rpx;
+      height: 96rpx;
+    }
+  }
+
+  .primary-btn {
+    @include app.btn(500rpx);
+  }
+}
+
+.van-field__body--textarea {
+  max-height: 100px !important;
+}
+
+.van-field__control--textarea {
+  max-height: 100px !important;
+
+}

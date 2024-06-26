@@ -53,7 +53,7 @@ Page({
         }
         arr.push({ 
            phone:this.data.phone,
-          password:this.data.password
+            password:this.data.password
         })
         wx.setStorageSync('register-user-list',arr)
       }else{

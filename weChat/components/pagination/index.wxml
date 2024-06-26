@@ -1,0 +1,22 @@
+<scroll-view
+  class="scroll"
+  style="{{style}}"
+  scroll-top="{{scrollTop}}"
+  scroll-y="true"
+  refresher-enabled="{{true}}"
+  bindrefresherrefresh="onPullDown"
+  refresher-triggered="{{triggered}}"
+  lower-threshold="{{50}}"
+  bindscrolltolower="onPullUp"
+>
+  <!-- 列表区 -->
+  <slot></slot>
+  <!-- 上拉加载 -->
+  <view class="loadmore" hidden="{{!isLoadingMore}}">
+    <view class="loadmore-icon"></view>
+    <view class="loadmore-tips">正在加载</view>
+  </view>
+
+  <!-- 我是底线 -->
+  <view wx:if="{{isNoMore}}" class="bot-line">我是有底线的</view>
+</scroll-view>

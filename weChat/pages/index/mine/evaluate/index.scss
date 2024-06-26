@@ -1,0 +1,124 @@
+@use 'app';
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+page {
+  background-color: app.$bg-color-gray;
+}
+
+.header {
+  @include app.flex(row, space-around, center);
+margin-bottom: 20rpx;
+  width: 100vw;
+  height: 100rpx;
+  background-color: app.$bg-color-white;
+
+  .header-tabBar {
+    position: relative;
+    @include app.flex(row, center, center);
+    height: 100%;
+  }
+
+  .active-tabBar {
+    font-weight: bold;
+    color: app.$text-color-blue-dimmer;
+
+    &::after {
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      content: '';
+      width: 90rpx;
+      height: 12rpx;
+      background-color: app.$bg-color-blue-dimmer;
+      border-radius: 7rpx;
+    }
+  }
+}
+
+
+.empty-status {
+  @include app.flex(column, flex-start, center, 10rpx);
+  margin-top: 180rpx;
+  width: 100vw;
+
+  .img {
+    width: 310rpx;
+    height: 265rpx;
+  }
+}
+
+.content-list {
+  @include app.flex(column, flex-start, center, 20rpx);
+  width: 100vw;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.placeholder {
+  height: 150rpx;
+}
+
+.data-list {
+  width: 100vw;
+  height: 10vh;
+}
+.panel-container {
+    width: 700rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+.info-container {
+    margin-top: 20rpx;
+  }
+  .heard{
+    font-size: 18px;
+    color:#333333;
+    padding:10px 0px 0px 0px;
+  }
+
+.form {
+    width: 710rpx;
+    padding: 20rpx 0rpx 20rpx 0rpx;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 0rpx 0rpx 10rpx 10rpx;
+    .titleItem {
+        font-size: 32rpx;
+        margin: auto 30rpx;
+        color: #333333;
+        .info {
+            margin-bottom: 20rpx;;
+            width: 554rpx;
+            height: 36rpx;
+            border-radius: 0rpx;
+            font-size: 26rpx;
+            font-family: PingFang SC, PingFang SC-Normal;
+            font-weight: normal;
+            text-align: LEFT;
+            color: #999999;
+        }
+    }
+    .fromInfo {
+        padding: 27rpx 42rpx 27rpx;
+        width: 644rpx;
+        font-size: 32rpx;
+        font-family: PingFang SC, PingFang SC-Normal;
+        font-weight: normal;
+        text-align: LEFT;
+        color: #333333;
+        line-height: 42rpx;
+        .text{
+           padding: 4rpx;     
+        }
+    }
+}
+.custom-scroll {
+    height: 69vh;
+  }

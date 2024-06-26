@@ -1,8 +1,5 @@
-const BASE_API = 'https://demo.puyitc.com'
-const CONST_API = 'https://demo.puyitc.com'
-
-// const BASE_API = 'https://lebm.puyitc.com'
-// const CONST_API = 'https://lebm.puyitc.com'
+const BASE_API = 'http://127.0.0.1'
+const CONST_API = 'http://127.0.0.1'
 
 
 const constants = {

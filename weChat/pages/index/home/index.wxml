@@ -1,7 +1,7 @@
 <view class="home-container">
   <view class="home-container__header">
     <view class="banner">
-      <image src="{{getPic.bannerPic}}" class="banner-img"></image>
+      <image src="../../image/index/bg@2x.png" class="banner-img"></image>
       <view class="banner-text" style="top: {{statusBarHeight}}px">
         <text class="banner-text__title text-xl text-blue-dimmer">{{bannerText.title}}</text>
         <text class="text-xxl">{{bannerText.subTitle}}</text>
@@ -29,7 +29,7 @@
   <view class="home-container__split"></view>
   <view class="home-container__footer">
     <view class="title">
-      <image src="{{getPic.titlePic}}" class="title-pic" />
+      <image src="../../image/index/dj_bg@2x.png" class="title-pic" />
       <text class="title-text text-xl-2">请选择需要的服务</text>
     </view>
   <!--导航 start-->

@@ -7,7 +7,7 @@
     </view>
   </view>
   <view class="shop-header__card">
-    <image src="{{picUrl+'/clound-file-server/api/raw/10501/bld3.png'}}" class="img"/>
+    <image src="../../image/shopping/bld3.png" class="img"/>
     <view class="content">
       <text>{{'生活百货'}}</text>
       <view class="content-span">08:40:00-22:40:00</view>
@@ -69,7 +69,7 @@
           class="item {{ item.inventory === 0 ? 'item-gray' : ''  }}"
         >
           <view class="item-img">
-            <image src="{{picUrl+item.pictureFileId}}" class="item-img"/>
+            <image src="{{'../../image/shopping/'+item.pictureFileId}}" class="item-img"/>
             <view wx:if="{{item.inventory === 0}}" class="{{ item.inventory === 0 ? 'item-img__gray' : ''  }}">已售完</view>
           </view>
           <view class="item-content">
@@ -134,7 +134,7 @@
     wx:key="index"
     class="cart-list__item">
     <view class="header">
-      <image src="{{picUrl+item.pictureFileId}}" class="img"/>
+      <image src="{{'../../image/shopping/'+item.pictureFileId}}" class="img"/>
       <view class="title">
         <text class="text-l">{{item.productName}}</text>
         <text class="text-l text-red">{{item.price}}</text>

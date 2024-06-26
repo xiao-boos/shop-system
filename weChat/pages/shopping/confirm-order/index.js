@@ -123,7 +123,7 @@ Page({
 			Object.assign(shopInfo, {
 				cspId: this.data.shopInfo.cspId,
 				category: this.data.shopInfo.category,
-				url: '/convenience-server/wxapp/custom/product-order/001/create',
+				url: '',
 				productInfo: this.data.tempCartList.map(item => ({
 					productId: item.productId,
 					productType: item.productType,

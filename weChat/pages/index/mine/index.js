@@ -11,7 +11,7 @@ import {showToast} from "../../../utils/ui";
 const app = getApp()
 Page({
 	data: {
-		locationInf: `${constants.imageBaseUrl}/mine/location_inf.png`,
+		address: `${constants.imageBaseUrl}/mine/location_inf.png`,
 		showPice: true,
 		showQrcode: false,
 		qrcodeImgData: '',
@@ -44,7 +44,6 @@ Page({
 		})
 	},
 	onShow() {
-    debugger
     if (wx.getStorageSync('convenience-login') == 'true') {
 			this.setData({
         convenienceLogin: wx.getStorageSync('convenience-login') === 'true',

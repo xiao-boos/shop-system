@@ -4,17 +4,7 @@
  * @return {string} 请求路径
  */
 export function categoryFilter(category) {
-	let url = ''
-	if (category === 1) {
-		url = '/convenience-server/wxapp/custom/restaurant-order/001/detail'
-	} else if (category === 2) {
-		url = '/convenience-server/wxapp/custom/product-order/001/detail'
-	} else if (category === 3 || category === 4) {
-		url = '/convenience-server/wxapp/custom/serve-order/001/detail'
-	} else if (category === 5 || category === 8 || category === 6) {
-		url = '/convenience-server/wxapp/custom/rent-order/001/detail'
-	}
-	return url
+	return ''
 }
 
 /**

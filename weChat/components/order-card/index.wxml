@@ -17,7 +17,7 @@
       class="card-content__item"
     >
       <view class="info">
-        <image src="{{ item.pictureFileId }}" class="img"/>
+        <image src="{{ '../../pages/image/shopping/'+item.pictureFileId }}" class="img"/>
         <text class="text-l">{{item.productName}}</text>
       </view>
       <text class="text-m">×{{item.count}}</text>

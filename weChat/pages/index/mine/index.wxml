@@ -20,7 +20,13 @@
     </view>
 	<view class='container_4'>
         <van-cell center title="地址管理" custom-class="cellClass" title-class="title-class" is-link data-id="index/mine/address-msg" catch:tap="toPage">
-            <image class='image_tupian_1' src='{{address}}' slot="icon"></image>
+            <image class='image_tupian_1' src='../../image/mine/address_inf_icon@2x.png' slot="icon"></image>
+        </van-cell>
+        <van-cell center title="评价管理" custom-class="cellClass" title-class="title-class" is-link data-id="index/mine/evaluate" catch:tap="toPage">
+            <image class='image_tupian_1' src='../../image/mine/pjmsg_iocn.png' slot="icon"></image>
+        </van-cell>
+        <van-cell center title="收藏商品" custom-class="cellClass" title-class="title-class" is-link data-id="index/mine/evaluate" catch:tap="toPage">
+            <image class='image_tupian_1' src='../../image/mine/sc.png' slot="icon"></image>
         </van-cell>
 	</view>
     <view class="buttonView">

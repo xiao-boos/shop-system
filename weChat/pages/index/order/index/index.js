@@ -35,7 +35,7 @@ Page({
       },
       {
         index: 3,
-        text: '已取消',
+        text: '已退货',
       }
     ],
     orderStatus: 0,
@@ -77,15 +77,8 @@ Page({
 				})
 			}
 			if (scrollPageFlag && this.listLoading) return
-      var res = '{"totalRecords":59,"recordList":[{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"/clound-file-server/api/raw/10404/ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391165"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"/clound-file-server/api/raw/10404/ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"/clound-file-server/api/raw/10404/ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"/clound-file-server/api/raw/10404/ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0}]}'
+      var res = '{"totalRecords":59,"recordList":[{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391165"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0},{"outTradeNo":"01002024032816340099391164","category":2,"cspId":"mark001","cspName":"生活百货","totalAmount":"0.10","beginDate":"2024-03-28 16:53:55","endDate":"2024-03-28 17:03:55","hasCommented":1,"orderStatus":7,"productList":[{"productId":"7","productName":"乐视薯片","workerPhone":"","pictureFileId":"ls5.png","price":"0.10","priceType":"","count":1,"sendTime":"","address":"","cspId":"","introduction":"100g","inventory":5,"outTradeNo":"01002024032816340099391164"}],"backPayStatus":0,"refundReason":"商品质量有问题","refundTime":"2024-05-15 14:41:56","refundRevokeTime":"2024-05-15 14:42:41","refundFinishTime":"","refundId":"","refundAmt":"","ampm":"","receiveStatus":0}]}'
 			const {recordList, totalRecords} = JSON.parse(res)
-			if (recordList.length !== 0) {
-				recordList.forEach(item => {
-					item.productList.forEach(product => {
-						product.pictureFileId = constants.CONST_API + product.pictureFileId
-					})
-				})
-			}
 			this.handleRequestOrderRes({recordList, totalRecords, scrollPageFlag})
 		} catch (e) {
 			console.log(e)
@@ -119,7 +112,7 @@ Page({
       let btnArr = []
       if(this.data.activeIndex == 1){
         btnArr.push({
-          text: '取消',
+          text: '退货',
           className: 'gray-btn',
           methodName: 'cancelOrder'
         },{

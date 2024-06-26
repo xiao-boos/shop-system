@@ -6,7 +6,6 @@ import {authStore} from '../../../store/index'
 
 const computedBehavior = require('miniprogram-computed').behavior
 import {createStoreBindings} from 'mobx-miniprogram-bindings'
-import {addTrack, setMenuId} from "../../../utils/track";
 import {showToast} from "../../../utils/ui";
 
 const app = getApp()
@@ -56,15 +55,6 @@ Page({
       icon: "http://jkw.life:8020/icon/全部频道.png"
     },], // 到家服务菜单
 		isFirst: true,
-	},
-	computed: {
-		getPic() {
-			return {
-				bannerPic: `${constants.imageBaseUrl}/index/bg@2x.png`,
-				messagePic: `${constants.imageBaseUrl}/index/xxtz_pic@2x.png`,
-				titlePic: `${constants.imageBaseUrl}/index/dj_bg@2x.png`
-			}
-		},
 	},
   initPageInfo() {
 		const menuButtonObject = wx.getMenuButtonBoundingClientRect()
